@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="w-full flex justify-center m-6 ">
+  <div class="border border-red-500 p-6 text-white rounded-md">
+    <h1> Livro: {{ object.titulo }}</h1>
+    <p> Autor: {{ object.autor }} </p>
+    <p> Ano de Publicação: {{ object.ano_publicacao }} </p>
+    <p> Editora: {{ object.editora }} </p>
+    <p> Descrição: {{ object.descricao }} </p>
+    <p> Codigo ISBN: {{ object.isbn }} </p>
+    <a class=" border border-red-400 rounded-md bg-red-600 text-white hover:bg-blue-500" href="{% url 'livro_excluir' object.id %}">Deletar</a>
+  </div>
+</div>
+{% endblock %}
+
+

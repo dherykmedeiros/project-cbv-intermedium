@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block conteudo %}
+  <h1 class="text-white">Excluir livro</h1>
+  <p class="text-white">Tem certeza que quer exluir o livro "{{object.titulo}}" ?</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <input  class="border border-red-500 hover:bg-red-500 cursor-pointer text-white" type="submit" value="Sim, excluir">
+    <a class=" text-blue-500" href="{% url 'livros' %}">Cancelar</a>
+{% endblock  %}

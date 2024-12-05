@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="">
+  <h1 class="m-2 text-2xl w-11/12 flex justify-center text-white">Lista de livros</h1>
+  <div class="grid grid-cols-5 m-6 gap-6 w-full">
+    {% for livro in livros %}
+      <div class="border border-red-500 p-6 text-white rounded-md">
+        <p> Autor: {{ livro.autor }} </p>
+        <h1> Livro: {{ livro.titulo }}</h1>
+        <p> Ano de Publicação: {{ livro.ano_publicacao }} </p>
+        <a class=" border border-red-400 rounded-md bg-red-600 text-white hover:bg-blue-500" href="{% url 'livro_atualizar' livro.id %}">Editar</a>
+        <a class=" border border-red-400 rounded-md bg-red-600 text-white hover:bg-blue-500" href="{% url 'livro_excluir' livro.id %}">Deletar</a>
+        <a class=" border border-red-400 rounded-md bg-red-600 text-white hover:bg-blue-500" href="{% url 'livro_detalhe' livro.id %}">Detalhes</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

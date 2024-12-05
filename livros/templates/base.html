@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciar livros</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<header>
+  <nav class="bg-gray-800 text-white p-4 ">
+    <div class="container  ml-2 flex">
+      <ul class="flex items-center space-x-4">
+        <li><a href="{% url 'livros' %}" class="text-lg font-bold">Livros</a></li>
+        <li><a href="{% url 'livro_novo' %}" class="text-lg font-bold">Criar Livro</a></li>
+      </ul>
+</header>
+<body class="bg-black">
+  {% block conteudo %}
+  {% endblock  %}
+</body>
+</html>
